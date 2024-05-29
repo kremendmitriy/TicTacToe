@@ -1,5 +1,11 @@
-// const ScoreTable = () => {
-//    return <div className="bg-[#d08d5a] w-[200px] h-[100%]">Score</div>;
-// };
+const ScoreTable = ({ winner }: { winner: string[] }) => {
+   return winner.map((item, index) => (
+      <div key={index}>
+         {item === 'x' || item === 'o'
+            ? `Game ${index + 1}. Winner is ${item.toUpperCase()}`
+            : `Game ${index + 1}. DRAW`}
+      </div>
+   ));
+};
 
-// export default ScoreTable;
+export default ScoreTable;
