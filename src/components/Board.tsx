@@ -1,7 +1,7 @@
+
 import Square from './Square';
 import { resetGame, setSquare } from '../states/actions';
 import ScoreTable from './ScoreTable';
-
 import React from 'react';
 
 interface BoardProps {
@@ -20,7 +20,6 @@ const Board: React.FC<BoardProps> = ({ state, dispatch }) => {
    const handleSquareClick = (index: number) => {
       dispatch(setSquare(index));
    };
-
    const handleReset = () => {
       dispatch(resetGame());
    };

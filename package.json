@@ -12,7 +12,10 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
     "redux": "^5.0.1",
+=======
+>>>>>>> 773361724c132af87e02bddc20d2028740b68c86
     "uuid": "^9.0.1"
   },
   "devDependencies": {
