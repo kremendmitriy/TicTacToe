@@ -1,15 +1,8 @@
-import { checkDraw, checkWinner } from '../Util';
+import { initialState } from './game-initialState';
+import { checkWinner, checkDraw } from '../../Util';
+import { Action } from '../../types';
 
-const initialState = {
-   squares: Array(9).fill(null),
-   isNextX: true,
-   winner: [],
-   isWinner: false,
-   isDraw: false,
-   winnerHistory: [],
-   info: 'Next is X',
-};
-export const reducer = (state = initialState, action) => {
+export const gameReducer = (state = initialState, action: Action) => {
    const { type, payload } = action;
 
    switch (type) {
@@ -29,8 +22,6 @@ export const reducer = (state = initialState, action) => {
          }
 
          const newSquares = state.squares.slice();
-         console.log('newSquares', newSquares);
-
          newSquares[payload] = state.isNextX ? 'x' : 'o';
 
          const winner = checkWinner(newSquares);

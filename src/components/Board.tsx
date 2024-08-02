@@ -1,21 +1,18 @@
-
 import Square from './Square';
-import { resetGame, setSquare } from '../states/actions';
 import ScoreTable from './ScoreTable';
-import React from 'react';
+import { resetGame, setSquare } from '../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../types';
 
-interface BoardProps {
-   state: {
-      squares: string[];
-      info: string;
-      winnerHistory: string[];
-   };
-   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-   dispatch: React.Dispatch<any>;
-}
+const Board = () => {
+   const dispatch = useDispatch();
 
-const Board: React.FC<BoardProps> = ({ state, dispatch }) => {
-   const { squares, info, winnerHistory } = state;
+   // const squares = useSelector((state) => state.squares);
+   // const info = useSelector((state) => state.info);
+   // const winnerHistory = useSelector((state) => state.winnerHistory);
+   const { squares, info, winnerHistory } = useSelector(
+      (state: RootState) => state.game
+   );
 
    const handleSquareClick = (index: number) => {
       dispatch(setSquare(index));

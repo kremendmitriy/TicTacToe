@@ -1,7 +1,7 @@
 import React from 'react';
 interface SquareProps {
    key: number;
-   value: string;
+   value: string | null;
    handleSquareClick: () => void;
 }
 
